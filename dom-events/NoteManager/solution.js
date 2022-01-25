@@ -3,10 +3,11 @@ console.log(addBtn);
 
 addBtn.addEventListener('click', e => {
   e.preventDefault();
-  const addedContent = document.querySelector('#add-input').value;
+  const input = document.querySelector('#add-input');
+  const inputContent = input.value;
   const newLi = document.createElement('li');
   const newNote = `
-            <p>${addedContent}</p>
+            <p>${inputContent}</p>
             <p>
               <i class="fa fa-pencil"></i>
               <i class="fa fa-times"></i>
@@ -16,4 +17,5 @@ addBtn.addEventListener('click', e => {
 
   const ul = document.querySelector('#list');
   ul.appendChild(newLi);
+  input.value = '';
 });
