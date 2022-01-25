@@ -15,14 +15,17 @@ p.innerHTML = p.innerText
   })
   .join(' ');
 
-
 /*
   Exercise 02
   -----------
   Add a link back to the source of the text after the paragraph tag.
   (http://officeipsum.com/)
 */
-p.setAttribute('src', 'http://officeipsum.com/');
+// p.setAttribute('src', 'http://officeipsum.com/');
+const link = document.createElement('a');
+link.setAttribute('href', 'http://officeipsum.com/');
+link.textContent = 'link';
+document.body.appendChild(link);
 
 /*
   Exercise 03
@@ -30,7 +33,7 @@ p.setAttribute('src', 'http://officeipsum.com/');
   Split each new sentence on to a separate line in the paragraph text.
   A sentence can be assumed to be a string of text terminated with a period (.)
 */
-const newContents = p.innerHTML.replaceAll('.', '.<br>');
+const newContents = p.innerHTML.replaceAll('.', '.</p><p>');
 p.innerHTML = newContents;
 
 /* 
@@ -55,4 +58,4 @@ const contentWithEmoji = p.innerHTML
   .replaceAll('?', '🤔')
   .replaceAll('!', '😲');
 p.innerHTML = contentWithEmoji;
-console.log(contentWithEmoji);
+// console.log(contentWithEmoji);
